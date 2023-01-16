@@ -40,6 +40,24 @@ async function seed() {
     },
   });
 
+  await prisma.post.create({
+    data: {
+      title: "My first post",
+      slug: "my-first-post",
+      content: "Hello, world!",
+      userId: user.id,
+    },
+  });
+
+  await prisma.post.create({
+    data: {
+      title: "My second post",
+      slug: "my-second-post",
+      content: "Hello, world again!",
+      userId: user.id,
+    },
+  });
+
   console.log(`Database has been seeded. 🌱`);
 }
 
